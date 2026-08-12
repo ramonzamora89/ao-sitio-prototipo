@@ -875,14 +875,19 @@ h3 {
 /* ---------- escena: fondo fijo a pantalla completa + parallax ---------- */
 .scene {
   position: relative;
-  overflow: hidden;
   background: var(--ink);
 }
 .scene__pin {
-  position: sticky;
+  /* Posicionado por assets/js/scenes.js (fixed mientras la escena cruza
+     el viewport, absolute pegado arriba/abajo antes y después). Evitamos
+     position:sticky con margen negativo: con overflow:hidden en un
+     ancestro dejaba de funcionar, y sin overflow:hidden el pin se
+     desbordaba sobre el contenido siguiente. */
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  margin-bottom: -100vh;
   overflow: hidden;
   z-index: 1;
 }
