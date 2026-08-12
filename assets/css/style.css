@@ -995,6 +995,184 @@ h3 {
   color: var(--ink);
   line-height: 1.35;
 }
+
+/* ---------- gráficas de datos recuperadas (capítulo 1) ---------- */
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+  margin: 1.75rem 0;
+}
+.case-stats__tile {
+  background: var(--cream);
+  border-radius: var(--radius-m);
+  padding: 1.1rem 1.15rem;
+}
+.case-stats__number {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
+  font-weight: 800;
+  color: var(--coral-dark);
+  line-height: 1.1;
+}
+.case-stats__label {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink-70);
+}
+.case-stats__tile--donut,
+.case-stats__tile--pictogram {
+  text-align: center;
+}
+.case-stats__tile--donut .case-stats__label,
+.case-stats__tile--pictogram .case-stats__label {
+  margin-top: 0;
+}
+.case-stats__source {
+  grid-column: 1 / -1;
+  margin-top: 0.1rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--ink-70);
+  opacity: 0.75;
+}
+.case-stats__source cite {
+  font-style: italic;
+}
+.case-donut {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: conic-gradient(var(--coral-dark) 0% 93%, var(--paper) 93% 100%);
+  margin: 0 auto 0.9rem;
+}
+.case-donut::after {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border-radius: 50%;
+  background: var(--cream);
+}
+.case-donut__figure {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--coral-dark);
+}
+.case-pictogram {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+  max-width: 150px;
+  margin: 0 auto 0.9rem;
+}
+.case-pictogram__dot {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--coral-dark);
+  background: var(--paper);
+}
+.case-pictogram__dot.is-filled {
+  background: var(--coral-dark);
+}
+@media (max-width: 520px) {
+  .case-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- foto documental dentro de una tarjeta de escena ---------- */
+.case-photo {
+  margin: 1.75rem 0;
+}
+.case-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-m);
+}
+.case-photo figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-70);
+}
+.case-photo figcaption a {
+  color: var(--coral-dark);
+}
+
+/* ---------- notas y bibliografía ---------- */
+.footnote-ref {
+  font-size: 0.7em;
+  margin-left: 0.15em;
+}
+.footnote-ref a {
+  color: var(--coral-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+.section--notes {
+  background: var(--paper);
+}
+.section--notes .notes {
+  max-width: 74ch;
+}
+.section--notes h2 {
+  font-size: 1.3rem;
+  margin-top: 2.75rem;
+}
+.section--notes h2:first-child {
+  margin-top: 0;
+}
+.notes__intro {
+  margin-top: 0.9rem;
+  color: var(--ink-70);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.notes__list {
+  margin-top: 1rem;
+  padding-left: 1.3rem;
+  color: var(--ink-70);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+.notes__list li {
+  margin-bottom: 1rem;
+}
+.notes__list li::marker {
+  color: var(--coral-dark);
+  font-weight: 700;
+}
+.notes__back {
+  margin-left: 0.35em;
+  color: var(--coral-dark);
+  text-decoration: none;
+}
+.notes__biblio {
+  margin-top: 1rem;
+  color: var(--ink-70);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  list-style: none;
+  padding-left: 0;
+}
+.notes__biblio li {
+  margin-bottom: 0.85rem;
+  padding-left: 1.4em;
+  text-indent: -1.4em;
+}
+.notes__biblio a {
+  color: var(--coral-dark);
+  word-break: break-word;
+}
 @media (prefers-reduced-motion: reduce) {
   .scene__subject {
     transform: none !important;

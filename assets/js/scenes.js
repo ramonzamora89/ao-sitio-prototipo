@@ -37,14 +37,18 @@
         // La escena todavía no llega arriba: el pin espera en su propio inicio.
         pin.style.position = "absolute";
         pin.style.top = "0";
-        pin.style.bottom = "";
+        pin.style.bottom = "auto";
         pin.style.left = "0";
         pin.style.width = "100%";
         progress = 0;
       } else if (rect.bottom < vh) {
         // La escena ya terminó de cruzar: el pin queda pegado a su propio final.
+        // Nota: .scene__pin fija "top: 0" en la hoja de estilos, así que hay
+        // que sobreescribirlo con "auto" explícito aquí (no basta con ""),
+        // o el navegador vuelve a ese top:0 y el pin queda "pegado arriba"
+        // en vez de quedar pegado abajo, desapareciendo del viewport.
         pin.style.position = "absolute";
-        pin.style.top = "";
+        pin.style.top = "auto";
         pin.style.bottom = "0";
         pin.style.left = "0";
         pin.style.width = "100%";
