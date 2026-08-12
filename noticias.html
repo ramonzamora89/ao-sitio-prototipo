@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="assets/js/gate.js"></script>
+  <title>Noticias — Fundación Abriendo Oportunidades</title>
+  <meta name="description" content="Noticias y publicaciones recientes sobre Abriendo Oportunidades y la Fundación en Guatemala." />
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/img/favicon-180.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/isotipo-fullcolor.png" alt="" width="42" height="42" />
+        <span class="brand-name">Fundación<br />Abriendo Oportunidades<span>Guatemala</span></span>
+      </a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="nav" data-nav aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="programa.html">El programa</a>
+        <a href="biblioteca.html">Biblioteca</a>
+        <a href="noticias.html" aria-current="page">Noticias</a>
+        <a class="btn btn-primary" href="contacto.html">Contáctanos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero container">
+      <p class="breadcrumb"><a href="index.html">Inicio</a> / Noticias</p>
+      <p class="kicker">Actualidad</p>
+      <h1>Noticias</h1>
+      <p class="lede">
+        Mientras conectamos nuestra propia fuente de noticias, compartimos publicaciones recientes del
+        Population Council relacionadas con Abriendo Oportunidades.
+      </p>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="notice reveal" style="margin-bottom:2.5rem;">
+          Esta sección está lista para conectarse a una hoja de Google Sheets y actualizarse sola. Revisa las
+          instrucciones en <code>assets/js/noticias.js</code> para publicar la hoja y pegar su enlace.
+        </div>
+        <div class="grid grid--3" data-noticias-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" style="margin-bottom:1rem; display:inline-flex;">
+            <img src="assets/img/isotipo-fullcolor.png" alt="" width="38" height="38" />
+            <span class="brand-name">Fundación<br/>Abriendo Oportunidades</span>
+          </a>
+          <p style="opacity:.75; max-width:32ch;">Continuando 20+ años de evidencia y trabajo comunitario con niñas indígenas en Guatemala.</p>
+        </div>
+        <div>
+          <h4>Sitio</h4>
+          <ul>
+            <li><a href="nosotros.html">Quiénes somos</a></li>
+            <li><a href="programa.html">El programa</a></li>
+            <li><a href="biblioteca.html">Biblioteca</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Investigación</h4>
+          <ul>
+            <li><a href="index.html#ciclo">Ciclo de evidencia</a></li>
+            <li><a href="https://popcouncil.org/country/guatemala/" target="_blank" rel="noopener">Population Council Guatemala</a></li>
+            <li><a href="https://knowledgecommons.popcouncil.org/" target="_blank" rel="noopener">Knowledge Commons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="contacto.html">Escríbenos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Fundación Abriendo Oportunidades, Guatemala.</span>
+        <span>Sitio en construcción — contenido de investigación sujeto a revisión.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/noticias.js"></script>
+</body>
+</html>
