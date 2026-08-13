@@ -1,2 +1,6 @@
 .DS_Store
 **/.DS_Store
+
+# Notas internas de proyecto (no públicas — el repo es público)
+CLAUDE.md
+PROJECT.md
