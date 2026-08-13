@@ -996,6 +996,91 @@ h3 {
   line-height: 1.35;
 }
 
+/* ---------- varias tarjetas por capítulo, separadas para que respire el fondo ---------- */
+.scene__card + .scene__card,
+.scene__card + .scene__card--stat,
+.scene__card--stat + .scene__card,
+.scene__card--stat + .scene__card--stat {
+  margin-top: min(38vh, 320px);
+}
+
+/* ---------- tarjeta de estadística independiente (capítulo 1, integrada al scroll) ---------- */
+.scene__card--stat {
+  max-width: 380px;
+  margin-inline: auto;
+  background: var(--paper);
+  border-radius: var(--radius-l);
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  box-shadow: 0 30px 60px -20px rgba(20, 17, 13, 0.4);
+  text-align: center;
+}
+.scene__card--stat .case-stats__number {
+  font-size: clamp(2.1rem, 1.6rem + 2vw, 2.75rem);
+}
+.scene__card--stat .case-stats__label {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+}
+.scene__card--stat .case-donut {
+  margin-top: 0.4rem;
+}
+.scene__card--stat .case-pictogram {
+  margin-top: 0.4rem;
+  max-width: 190px;
+}
+.scene__card--stat .case-stats__source {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--cream);
+}
+
+/* ---------- notas al margen (Tufte-style sidenotes) ---------- */
+.footnote-ref {
+  font-size: 0.7em;
+  margin-left: 0.15em;
+}
+.footnote-ref a {
+  color: var(--coral-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+.sidenote {
+  display: none;
+}
+@media (min-width: 1080px) {
+  .scene__card--notes {
+    max-width: 940px;
+    padding-right: clamp(1.5rem, 4vw, 2.75rem);
+  }
+  .scene__card--notes > .kicker,
+  .scene__card--notes > h2,
+  .scene__card--notes > h3,
+  .scene__card--notes > p,
+  .scene__card--notes > .scene__quote,
+  .scene__card--notes > .case-stats {
+    max-width: 600px;
+  }
+  .sidenote {
+    display: block;
+    float: right;
+    clear: right;
+    width: 260px;
+    margin-top: 0.15em;
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--cream);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: var(--ink-70);
+  }
+  .sidenote__num {
+    display: inline-block;
+    margin-right: 0.35em;
+    font-weight: 800;
+    color: var(--coral-dark);
+  }
+}
+
 /* ---------- gráficas de datos recuperadas (capítulo 1) ---------- */
 .case-stats {
   display: grid;
@@ -1089,6 +1174,20 @@ h3 {
 }
 
 /* ---------- foto documental dentro de una tarjeta de escena ---------- */
+.scene__card--photo {
+  max-width: 380px;
+  background: var(--paper);
+  border-radius: var(--radius-l);
+  padding: 0.9rem 0.9rem 1.15rem;
+  box-shadow: 0 30px 60px -20px rgba(20, 17, 13, 0.4);
+}
+.scene__card--photo.case-photo {
+  margin-left: auto;
+  margin-right: auto;
+}
+.scene__card--photo figcaption {
+  padding-inline: 0.35rem;
+}
 .case-photo {
   margin: 1.75rem 0;
 }
