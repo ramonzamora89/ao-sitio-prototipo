@@ -89,6 +89,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -98,6 +99,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img {
   max-width: 100%;
@@ -651,6 +653,36 @@ h3 {
 }
 .ciclo-panel__nav button:hover {
   border-color: var(--ink);
+}
+
+/* en pantallas angostas, las etiquetas radiales del círculo se salen del
+   viewport (están ancladas a un radio fijo, pensado para desktop); se
+   ocultan y basta con los números + la leyenda + el tooltip al tocar */
+@media (max-width: 640px) {
+  .ciclo-node-label {
+    display: none;
+  }
+  /* en móvil el tooltip se comporta como hoja inferior: ancho completo,
+     sin el cálculo de posición anclada al nodo (evita que se salga de
+     pantalla en viewports angostos) */
+  .ciclo-panel-overlay.is-open {
+    background: rgba(20, 17, 13, 0.45);
+    pointer-events: auto;
+  }
+  .ciclo-panel {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    max-height: 80vh;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
+    transform: translateY(100%);
+  }
+  .ciclo-panel-overlay.is-open .ciclo-panel {
+    transform: translateY(0);
+  }
 }
 
 /* ---------- cards ---------- */

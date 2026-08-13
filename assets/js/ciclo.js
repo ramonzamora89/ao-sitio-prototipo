@@ -247,6 +247,7 @@ const CICLO_DATA = [
     g.appendChild(idx);
 
     const labelGroup = svgEl("text", {
+      class: "ciclo-node-label",
       x: lx,
       y: ly - 2,
       "text-anchor": anchor,
@@ -305,6 +306,13 @@ const CICLO_DATA = [
 
   function positionPanel(anchorEl) {
     if (!anchorEl || !panel.getBoundingClientRect) return;
+    if (window.innerWidth <= 640) {
+      // en móvil el tooltip es una hoja inferior de ancho completo,
+      // posicionada enteramente por CSS: no calcular left/top anclados.
+      panel.style.left = "";
+      panel.style.top = "";
+      return;
+    }
     const margin = 14;
     const anchorRect = anchorEl.getBoundingClientRect();
     const panelRect = panel.getBoundingClientRect();

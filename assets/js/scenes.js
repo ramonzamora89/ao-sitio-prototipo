@@ -27,9 +27,17 @@
   let ticking = false;
 
   function update() {
+    // En Safari/Chrome móvil, la barra de direcciones cambia
+    // window.innerHeight en vivo mientras se hace scroll, pero el CSS usa
+    // un 100vh fijo para .scene__pin. Si ambos valores se desincronizan,
+    // el pin se "suelta" en el punto equivocado y deja ver el fondo
+    // oscuro de .scene detrás (franjas grises). Por eso la altura del pin
+    // también se fija aquí, en JS, con el mismo valor de vh que se usa
+    // para decidir cuándo despegarlo.
     const vh = window.innerHeight;
 
     scenes.forEach(({ scene, pin, subject }) => {
+      pin.style.height = vh + "px";
       const rect = scene.getBoundingClientRect();
       let progress = 0;
 
